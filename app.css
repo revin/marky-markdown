@@ -1,0 +1,104 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; height: 100%; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  display: flex;
+  flex-direction: column;
+}
+header {
+  margin: 0;
+  padding: 0 0 .5rem 0;
+  flex: none;
+}
+header h1 {
+  background-color: #557;
+  color: #fdfdfd;
+  font-weight: lighter;
+  font-size: 1.75rem;
+  padding: .125rem 1rem .125rem 1rem;
+  margin: 0;
+}
+#options {
+  padding: 0 1rem 0 1rem;
+  margin: .85rem 0 .85rem 0;
+  font-size: .85rem;
+}
+
+#options label {
+  white-space: nowrap;
+}
+
+#options input[type=checkbox] {
+  margin-left: 1em;
+}
+
+#main {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  border-top: 1px solid #aaa;
+}
+#editor-container {
+  flex: 1;
+  overflow: scroll;
+}
+#output-container {
+  flex: 1;
+  padding: .5em .5em .5em 1.5em;
+  border-left: .5rem solid #eaeaea;
+  overflow: scroll;
+}
+
+#editor-controls {
+  width: 50%;
+  float: left;
+}
+#editor-controls button {
+  padding: .25rem .75rem .25rem .75rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  text-transform: lowercase;
+}
+#output-controls {
+  width: 50%;
+  float: right;
+  text-align: right;
+  text-transform: lowercase;
+}
+#output-controls label {
+  display: inline-block;
+  cursor: pointer;
+  padding: .25rem .75rem .25rem .75rem;
+  border: 1px solid #aaa;
+}
+#output-controls input[type=radio] {
+  display: none;
+}
+#output-controls input[type=radio] + label {
+  background-color: unset;
+}
+#output-controls input[type=radio]:checked + label {
+  background-color: #557;
+  color: #fdfdfd;
+}
+
+.markdown-body .deep-link {
+  margin-left: -20px;
+}
+.markdown-body .deep-link-icon {
+  visibility: hidden;
+}
+.markdown-body h1:hover .deep-link .deep-link-icon,
+.markdown-body h2:hover .deep-link .deep-link-icon,
+.markdown-body h3:hover .deep-link .deep-link-icon,
+.markdown-body h4:hover .deep-link .deep-link-icon,
+.markdown-body h5:hover .deep-link .deep-link-icon,
+.markdown-body h6:hover .deep-link .deep-link-icon {
+  visibility: visible;
+}
+
+#editor-container pre.ace_editor { margin-top: 0; }
+#output-container.source, #output-container.debug {
+  background-color: #f7f7f7;
+  padding-left: 0;
+}
