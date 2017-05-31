@@ -28,6 +28,8 @@ function highlightBlock (element) {
 }
 
 function render () {
+  if (!('markyMarkdown' in window)) return
+
   var options = buildOptions()
   var outputTypeElements = document.getElementsByName('outputType')
   var viewTypes = Array.prototype.slice.call(outputTypeElements)
@@ -86,13 +88,13 @@ function escapeText (text) {
 }
 
 function useMarkyVersion (version) {
-  if ('markyMarkdown' in window) { delete window.markyMarkdown }
-
   var head = document.getElementsByTagName('head')[0]
   var scripts = document.querySelectorAll('head script.marky-markdown')
   for (var i = 0; i < scripts.length; i++) {
     head.removeChild(scripts[i])
   }
+
+  if ('markyMarkdown' in window) { delete window.markyMarkdown }
 
   var scriptElement = document.createElement('script')
   scriptElement.onload = render
@@ -135,4 +137,3 @@ function setupEvents (editor) {
     editor.setValue('')
   })
 }
-
